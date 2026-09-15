@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fenando - Dosen Sistem Informasi & Senior Software Engineer</title>
+  <meta name="description" content="Portofolio akademik dan software engineering Fenando - Dosen Sistem Informasi UIN Raden Fatah Palembang, Asesor BNSP, Oracle & Google Certified Trainer.">
+  <meta name="keywords" content="Fenando, Dosen UIN Raden Fatah, Asesor BNSP, Software Engineer, Laravel, QGIS, SMART Borda, Palembang">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#1e1b4b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen text-slate-800 dark:text-slate-100 bg-slate-50 dark:bg-[#090d16] selection:bg-indigo-500 selection:text-white">
+
+  <!-- STICKY NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+          F
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg tracking-tight group-hover:text-indigo-500 transition-colors">Fenando, M.Kom.</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">Lecturer & Senior Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#hero" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400">Beranda</a>
+        <a href="#profile" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400">Profil & Peran</a>
+        <a href="#projects" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400">Proyek & Riset</a>
+        <a href="#playground" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400">Demo Live</a>
+        <a href="#skills" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400">Keahlian</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400">Kontak</a>
+      </nav>
+
+      <!-- Actions & Dark Toggle -->
+      <div class="flex items-center gap-4">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="theme-icon-sun w-5 h-5 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="theme-icon-moon w-5 h-5 text-indigo-400"></i>
+        </button>
+
+        <!-- GitHub Profile Button -->
+        <a href="https://github.com/Fenando-rv/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-all shadow-md shadow-indigo-600/25">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-6 space-y-3">
+      <a href="#hero" class="mobile-nav-link block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600">Beranda</a>
+      <a href="#profile" class="mobile-nav-link block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600">Profil & Peran</a>
+      <a href="#projects" class="mobile-nav-link block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600">Proyek & Riset</a>
+      <a href="#playground" class="mobile-nav-link block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600">Demo Live</a>
+      <a href="#skills" class="mobile-nav-link block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600">Keahlian & Sertifikasi</a>
+      <a href="#contact" class="mobile-nav-link block py-2 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-indigo-600">Kontak</a>
+      <a href="https://github.com/Fenando-rv/" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-indigo-600 text-white font-medium">
+        <i data-lucide="github" class="w-4 h-4"></i> GitHub Profile
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="pt-20">
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+      <!-- Glow Background elements -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-glow-indigo pointer-events-none rounded-full blur-3xl opacity-60"></div>
+      <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-glow-cyan pointer-events-none rounded-full blur-3xl opacity-40"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-7 space-y-6 text-left">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>Available for Academic & Consultancy Collaboration</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+              Bridging <span class="text-gradient-indigo">Academic Rigor</span> & Modern <span class="text-gradient-indigo">Software Engineering</span>.
+            </h1>
+
+            <!-- Subtitle Roles -->
+            <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed">
+              Halo, Saya <strong class="text-indigo-600 dark:text-indigo-400">Fenando</strong> — Dosen Sistem Informasi UIN Raden Fatah Palembang, Asesor Kompetensi BNSP, & Senior Software Engineer.
+            </p>
+
+            <p class="text-base text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">
+              Berpengalaman dalam pengembangan Sistem Informasi Sektor Publik, Sistem Pendukung Keputusan (DSS/SMART-Borda), Analisis Spasial GIS (QGIS), serta instruktur Pelatihan Pemrograman & Digital Forensics untuk institusi pemerintah dan kepolisian.
+            </p>
+
+            <!-- Quick Meta Badges -->
+            <div class="flex flex-wrap gap-2.5 pt-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-200/70 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-500"></i> Palembang, Sumatera Selatan
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-200/70 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300">
+                <i data-lucide="building-2" class="w-3.5 h-3.5 text-indigo-500"></i> UIN Raden Fatah Palembang
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-200/70 dark:bg-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-indigo-500"></i> Asesor BNSP & Oracle Trainer
+              </span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+              <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition-all shadow-lg shadow-indigo-600/30 hover:scale-[1.02]">
+                <span>Lihat Proyek & Riset</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold text-sm transition-all">
+                <i data-lucide="mail" class="w-4 h-4 text-indigo-500"></i>
+                <span>Hubungi Saya</span>
+              </a>
+              <a href="https://github.com/Fenando-rv/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/40 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800 font-mono text-xs transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>github.com/Fenando-rv</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image & Badge Frame -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <div class="relative group">
+              <!-- Decorative Outer Ring -->
+              <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-indigo-500 via-cyan-500 to-emerald-500 opacity-30 blur-xl group-hover:opacity-50 transition-opacity"></div>
+              
+              <!-- Avatar Card Container -->
+              <div class="relative glass-panel p-3 rounded-3xl overflow-hidden shadow-2xl max-w-sm sm:max-w-md">
+                <img src="assets/images/profile.jpg" alt="Fenando, M.Kom." class="w-full h-auto rounded-2xl object-cover transform group-hover:scale-[1.02] transition-transform duration-500">
+                
+                <!-- Floating Floating Code Card -->
+                <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel bg-slate-900/85 text-white backdrop-blur-md border border-slate-700/60 shadow-xl animate-float">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                      <span class="font-mono text-xs font-semibold text-indigo-300">Fenando.sys</span>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-400">v2.0.26</span>
+                  </div>
+                  <div class="mt-2 text-xs font-mono text-slate-300 space-y-1">
+                    <p><span class="text-indigo-400">const</span> role = <span class="text-emerald-400">"Lecturer & Engineer"</span>;</p>
+                    <p><span class="text-indigo-400">const</span> location = <span class="text-cyan-400">"UIN Raden Fatah"</span>;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STATISTICS COUNTER SECTION -->
+    <section id="statistics" class="py-12 bg-white/50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          
+          <!-- Counter 1 -->
+          <div class="p-6 rounded-2xl glass-panel card-hover">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">
+              <span class="counter-val" data-target="8" data-suffix="+">0</span>
+            </div>
+            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Tahun Pengajaran & Riset</p>
+          </div>
+
+          <!-- Counter 2 -->
+          <div class="p-6 rounded-2xl glass-panel card-hover">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+              <i data-lucide="folder-code" class="w-6 h-6"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">
+              <span class="counter-val" data-target="25" data-suffix="+">0</span>
+            </div>
+            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Proyek Software & GIS Selesai</p>
+          </div>
+
+          <!-- Counter 3 -->
+          <div class="p-6 rounded-2xl glass-panel card-hover">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">
+              <span class="counter-val" data-target="5" data-suffix="+">0</span>
+            </div>
+            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Sertifikasi BNSP / Oracle / Google</p>
+          </div>
+
+          <!-- Counter 4 -->
+          <div class="p-6 rounded-2xl glass-panel card-hover">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-mono">
+              <span class="counter-val" data-target="10" data-suffix="+">0</span>
+            </div>
+            <p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Kepolisian & Public Sector Training</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ACADEMIC & PROFESSIONAL CREDENTIALS -->
+    <section id="profile" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs font-mono font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2">Pilar Rekam Jejak</h2>
+          <p class="text-3xl sm:text-4xl font-bold tracking-tight">Academic & Professional Credentials</p>
+          <p class="mt-4 text-slate-500 dark:text-slate-400">Mengintegrasikan standar akademis tinggi dengan implementasi teknologi nyata di institusi pendidikan, pemerintahan, dan kepolisian.</p>
+        </div>
+
+        <!-- Credentials Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Card 1: Dosen UIN -->
+          <div class="p-8 rounded-2xl glass-panel card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-6">
+                <i data-lucide="book-open-check" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Dosen Sistem Informasi</h3>
+              <p class="text-xs font-mono text-indigo-500 font-semibold mb-4">UIN Raden Fatah Palembang</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                Menjalankan Tridharma Perguruan Tinggi, pengajaran mata kuliah Rekayasa Perangkat Lunak, Basis Data, GIS, serta pembimbingan riset mahasiswa.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+              <span class="text-xs font-semibold text-slate-400">Fakultas Sains & Teknologi</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Asesor BNSP -->
+          <div class="p-8 rounded-2xl glass-panel card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-6">
+                <i data-lucide="check-square" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Asesor Kompetensi BNSP</h3>
+              <p class="text-xs font-mono text-cyan-500 font-semibold mb-4">Web Developer Competency</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                Tersertifikasi lisensi Asesor Kompetensi BNSP Republik Indonesia dalam menguji keahlian dan kualifikasi profesional bidang Pengembangan Web.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+              <span class="text-xs font-semibold text-slate-400">BNSP RI Certified</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Oracle & Google Trainer -->
+          <div class="p-8 rounded-2xl glass-panel card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-6">
+                <i data-lucide="award" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Oracle & Google Certified</h3>
+              <p class="text-xs font-mono text-amber-500 font-semibold mb-4">ToT Certified Faculty</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                Instruktur Oracle Academy (ToT Certified), Google Certified Educator (Level 1 & 2), dan Gemini Certified Faculty dalam ekosistem AI & EdTech.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+              <span class="text-xs font-semibold text-slate-400">Oracle & Google Academy</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Trainer Kepolisian -->
+          <div class="p-8 rounded-2xl glass-panel card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-6">
+                <i data-lucide="shield" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-2">Mentor Kepolisian Sumsel</h3>
+              <p class="text-xs font-mono text-emerald-500 font-semibold mb-4">POLDA & POLRESTABES Sumsel</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                Narasumber dan Mentor pelatihan Digital Forensics, Pemrograman, serta Keamanan Informasi untuk jajaran Kepolisian Sumatera Selatan.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+              <span class="text-xs font-semibold text-slate-400">Mitra Kepolisian Sumsel</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FEATURED PROJECTS & RESEARCH SECTION -->
+    <section id="projects" class="py-20 bg-slate-100/50 dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Title -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <h2 class="text-xs font-mono font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2">Portofolio Kunci</h2>
+            <p class="text-3xl sm:text-4xl font-bold tracking-tight">Featured Projects & Research</p>
+            <p class="mt-2 text-slate-500 dark:text-slate-400 max-w-2xl">Daftar aplikasi dan hasil riset terapan yang berorientasi pada penyelesaian masalah nyata di sektor publik, bisnis, dan akademik.</p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="flex flex-wrap gap-2 p-1.5 rounded-2xl glass-panel self-start md:self-auto">
+            <button type="button" class="tab-btn active px-4 py-2 rounded-xl text-xs font-semibold" data-filter="all">Semua</button>
+            <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300" data-filter="si">Sistem Informasi</button>
+            <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300" data-filter="dss">DSS & Algoritma</button>
+            <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300" data-filter="gis">SIG / GIS</button>
+            <button type="button" class="tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300" data-filter="ecommerce">E-Commerce</button>
+          </div>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: BLK PPKT ERP -->
+          <div class="project-card rounded-2xl glass-panel overflow-hidden card-hover flex flex-col" data-category="si">
+            <div class="relative h-52 overflow-hidden bg-slate-800">
+              <img src="assets/images/project_blk.jpg" alt="BLK PPKT Sumsel" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 rounded-full bg-indigo-600/90 text-white font-mono text-[11px] font-semibold backdrop-blur-md">Web Application / Public Sector</span>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug">Sistem Informasi Diklat UPTD BLK PPKT Sumsel</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                  Digitalisasi administrasi manajemen pelatihan kerja, pendaftaran peserta, pelaporan sertifikasi, dan penjadwalan diklat di UPTD BLK PPKT Sumatera Selatan.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">PHP</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Laravel</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">MySQL</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Bootstrap</span>
+                </div>
+                <button type="button" class="open-modal-btn w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold transition-colors" data-project="blk">
+                  <span>Detail Arsitektur & System Flow</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: SPK SMART & Borda -->
+          <div class="project-card rounded-2xl glass-panel overflow-hidden card-hover flex flex-col" data-category="dss">
+            <div class="relative h-52 overflow-hidden bg-slate-800">
+              <img src="assets/images/project_smart_borda.jpg" alt="SPK SMART & Borda" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 rounded-full bg-cyan-600/90 text-white font-mono text-[11px] font-semibold backdrop-blur-md">DSS / Algorithmic Research</span>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug">SPK: Pemilihan Sosok Mulia (SMART & Borda)</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                  Implementasi algoritma Simple Multi-Attribute Rating Technique (SMART) dikombinasikan dengan metode agregasi voting Borda untuk pemeringkatan keputusan terukur.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Algoritma SMART</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Metode Borda</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Data Analytics</span>
+                </div>
+                <button type="button" class="open-modal-btn w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-xs font-semibold transition-colors" data-project="smart_borda">
+                  <span>Detail Arsitektur & System Flow</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Denia Donuts E-Commerce -->
+          <div class="project-card rounded-2xl glass-panel overflow-hidden card-hover flex flex-col" data-category="ecommerce">
+            <div class="relative h-52 overflow-hidden bg-slate-800">
+              <img src="assets/images/project_donuts.jpg" alt="Denia Donuts" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 rounded-full bg-amber-600/90 text-white font-mono text-[11px] font-semibold backdrop-blur-md">Commercial Web / Retail</span>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug">E-Commerce Toko Denia Donuts</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                  Platform e-commerce pemesanan dan katalog produk online untuk toko Denia Donuts, dilengkapi manajemen stok, keranjang belanja, dan sistem rekapitulasi pesanan.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">PHP</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">MySQL</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">E-Commerce Cart</span>
+                </div>
+                <button type="button" class="open-modal-btn w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-semibold transition-colors" data-project="donuts">
+                  <span>Detail Arsitektur & System Flow</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: QGIS Coal Mining Spatial GIS -->
+          <div class="project-card rounded-2xl glass-panel overflow-hidden card-hover flex flex-col" data-category="gis">
+            <div class="relative h-52 overflow-hidden bg-slate-800">
+              <img src="assets/images/project_qgis.jpg" alt="SIG Quantum GIS Batu Bara" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 rounded-full bg-emerald-600/90 text-white font-mono text-[11px] font-semibold backdrop-blur-md">GIS / Spatial Analytics</span>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug">SIG Pemetaan Pertambangan Batu Bara (QGIS)</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                  Pemetaan spasial dan analisis tata letak zona konsesi pertambangan batu bara, jalur logistik, dan titik eksplorasi berbasis Quantum GIS (PT. Hasil Bumi Kalimantan).
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Quantum GIS (QGIS)</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Shapefiles</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Spatial DB</span>
+                </div>
+                <button type="button" class="open-modal-btn w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold transition-colors" data-project="qgis">
+                  <span>Detail Arsitektur & System Flow</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Algorithmic Match Logic App -->
+          <div class="project-card rounded-2xl glass-panel overflow-hidden card-hover flex flex-col" data-category="dss">
+            <div class="relative h-52 overflow-hidden bg-slate-800">
+              <img src="assets/images/project_match.jpg" alt="Algorithmic Match App" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 rounded-full bg-violet-600/90 text-white font-mono text-[11px] font-semibold backdrop-blur-md">Interactive Logic App</span>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug">Kecocokan Jodoh (Algorithmic Logic App)</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                  Aplikasi kalkulasi interaktif berbasis algoritma pencocokan nama, numerologi personal, dan penimbangan matriks kriteria kecocokan.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">JavaScript Logic</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">Algoritma Matriks</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300">HTML5 Canvas</span>
+                </div>
+                <button type="button" class="open-modal-btn w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-600 dark:text-violet-400 text-xs font-semibold transition-colors" data-project="match">
+                  <span>Detail Arsitektur & System Flow</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LIVE INTERACTIVE ALGORITHMIC PLAYGROUND -->
+    <section id="playground" class="py-20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs font-mono font-bold tracking-widest text-cyan-600 dark:text-cyan-400 uppercase mb-2">Simulasi Real-time</h2>
+          <p class="text-3xl sm:text-4xl font-bold tracking-tight">Interactive DSS & SMART Algorithm Engine</p>
+          <p class="mt-4 text-slate-500 dark:text-slate-400">Uji coba simulasi perhitungan algoritma Simple Multi-Attribute Rating Technique (SMART) secara realtime di bawah ini.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Slider Controls -->
+          <div class="lg:col-span-5 glass-panel p-8 rounded-2xl space-y-6">
+            <h3 class="text-lg font-bold flex items-center gap-2">
+              <i data-lucide="sliders" class="w-5 h-5 text-indigo-500"></i>
+              <span>Atur Bobot Kriteria (Weighting)</span>
+            </h3>
+
+            <!-- Slider 1 -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="font-medium">Kriteria 1: Integritas & Etika</span>
+                <span id="val-c1" class="font-mono text-indigo-500 font-bold">40</span>
+              </div>
+              <input id="weight-c1" type="range" min="10" max="100" value="40" class="w-full accent-indigo-600 cursor-pointer">
+              <p class="text-[11px] text-slate-500">Bobot Ternormalisasi: <span id="norm-c1" class="font-mono font-bold text-slate-700 dark:text-slate-300">0.40</span></p>
+            </div>
+
+            <!-- Slider 2 -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="font-medium">Kriteria 2: Kompetensi Teknikal</span>
+                <span id="val-c2" class="font-mono text-cyan-500 font-bold">35</span>
+              </div>
+              <input id="weight-c2" type="range" min="10" max="100" value="35" class="w-full accent-cyan-600 cursor-pointer">
+              <p class="text-[11px] text-slate-500">Bobot Ternormalisasi: <span id="norm-c2" class="font-mono font-bold text-slate-700 dark:text-slate-300">0.35</span></p>
+            </div>
+
+            <!-- Slider 3 -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="font-medium">Kriteria 3: Kepemimpinan & Pengabdian</span>
+                <span id="val-c3" class="font-mono text-emerald-500 font-bold">25</span>
+              </div>
+              <input id="weight-c3" type="range" min="10" max="100" value="25" class="w-full accent-emerald-600 cursor-pointer">
+              <p class="text-[11px] text-slate-500">Bobot Ternormalisasi: <span id="norm-c3" class="font-mono font-bold text-slate-700 dark:text-slate-300">0.25</span></p>
+            </div>
+
+            <button id="calc-smart-btn" type="button" class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-semibold text-sm shadow-md hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+              <span>Kalkulasi Skor Matriks SMART</span>
+            </button>
+          </div>
+
+          <!-- Live Output Table -->
+          <div class="lg:col-span-7 glass-panel p-8 rounded-2xl space-y-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold flex items-center gap-2">
+                <i data-lucide="bar-chart-3" class="w-5 h-5 text-cyan-500"></i>
+                <span>Hasil Pemeringkatan Keputusan SMART</span>
+              </h3>
+              <span class="text-xs font-mono text-emerald-500 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">Live Calculation</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="text-xs uppercase font-mono bg-slate-200/50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400">
+                  <tr>
+                    <th class="py-3 px-3">Peringkat</th>
+                    <th class="py-3 px-3">Kandidat / Alternatif</th>
+                    <th class="py-3 px-3">Skor Utilitas SMART</th>
+                    <th class="py-3 px-3">Status Evaluasi</th>
+                  </tr>
+                </thead>
+                <tbody id="smart-result-body">
+                  <!-- JS dynamically renders rows here -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="p-4 rounded-xl bg-indigo-500/5 border border-indigo-500/20 text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-mono">
+              <p>Formula Utilitas: <strong class="text-indigo-400">Ui(ai) = Σ (Wj * Uj(ai))</strong> di mana Wj adalah bobot ternormalisasi kriteria dan Uj adalah fungsi nilai utilitas linier.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SKILLS MATRIX SECTION -->
+    <section id="skills" class="py-20 bg-slate-100/50 dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs font-mono font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2">Matriks Kompetensi</h2>
+          <p class="text-3xl sm:text-4xl font-bold tracking-tight">Keahlian & Technical Stack</p>
+          <p class="mt-4 text-slate-500 dark:text-slate-400">Penguasaan komprehensif pada bahasa pemrograman, framework modern, sistem basis data, dan perangkat lunak spasial GIS.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          
+          <!-- Category 1: Languages -->
+          <div class="p-8 rounded-2xl glass-panel space-y-6">
+            <h3 class="text-xl font-bold flex items-center gap-3">
+              <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-500">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+              </div>
+              <span>Bahasa Pemrograman</span>
+            </h3>
+            
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>PHP (Laravel / CodeIgniter Engine)</span>
+                  <span class="font-mono text-indigo-500">95%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-indigo-600 rounded-full" data-percentage="95" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Java (Object Oriented Architecture)</span>
+                  <span class="font-mono text-indigo-500">90%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-indigo-600 rounded-full" data-percentage="90" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>C++ & Algoritma Data Structure</span>
+                  <span class="font-mono text-indigo-500">85%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-indigo-600 rounded-full" data-percentage="85" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Python (Data Analytics & GIS Scripting)</span>
+                  <span class="font-mono text-indigo-500">88%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-indigo-600 rounded-full" data-percentage="88" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Frameworks & GIS -->
+          <div class="p-8 rounded-2xl glass-panel space-y-6">
+            <h3 class="text-xl font-bold flex items-center gap-3">
+              <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-500">
+                <i data-lucide="layers" class="w-6 h-6"></i>
+              </div>
+              <span>Frameworks & Spatial GIS</span>
+            </h3>
+            
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Laravel & CodeIgniter Framework</span>
+                  <span class="font-mono text-cyan-500">95%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-cyan-500 rounded-full" data-percentage="95" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Quantum GIS (QGIS) & Spatial Mapping</span>
+                  <span class="font-mono text-cyan-500">92%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-cyan-500 rounded-full" data-percentage="92" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Oracle Database & MySQL Architecture</span>
+                  <span class="font-mono text-cyan-500">92%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-cyan-500 rounded-full" data-percentage="92" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-semibold mb-1">
+                  <span>Flutter Cross-Platform Development</span>
+                  <span class="font-mono text-cyan-500">80%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                  <div class="skill-bar-fill h-full bg-cyan-500 rounded-full" data-percentage="80" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT & LOCATION SECTION -->
+    <section id="contact" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Contact Meta Info -->
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <h2 class="text-xs font-mono font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2">Mari Berkolaborasi</h2>
+              <p class="text-3xl sm:text-4xl font-bold tracking-tight">Hubungi Saya</p>
+              <p class="mt-4 text-slate-500 dark:text-slate-400 leading-relaxed">
+                Terbuka untuk kolaborasi penelitian akademik, konsultasi pengembangan sistem informasi, pengujian asesor BNSP, maupun undangan pelatihan software engineering & digital forensics.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Location Card -->
+              <div class="p-4 rounded-xl glass-panel flex items-center gap-4">
+                <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-500">
+                  <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-mono font-bold text-slate-400 uppercase">Lokasi Akademik</h4>
+                  <p class="text-sm font-semibold">Palembang, Sumatera Selatan, Indonesia</p>
+                </div>
+              </div>
+
+              <!-- Institution Card -->
+              <div class="p-4 rounded-xl glass-panel flex items-center gap-4">
+                <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-500">
+                  <i data-lucide="building" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-mono font-bold text-slate-400 uppercase">Institusi Utama</h4>
+                  <p class="text-sm font-semibold">Prodi Sistem Informasi, UIN Raden Fatah Palembang</p>
+                </div>
+              </div>
+
+              <!-- GitHub Profile Card -->
+              <a href="https://github.com/Fenando-rv/" target="_blank" class="p-4 rounded-xl glass-panel flex items-center gap-4 hover:border-indigo-500/50 transition-colors group">
+                <div class="p-3 rounded-xl bg-slate-800 text-white group-hover:scale-105 transition-transform">
+                  <i data-lucide="github" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-mono font-bold text-slate-400 uppercase">GitHub Repository</h4>
+                  <p class="text-sm font-semibold text-indigo-500 group-hover:underline">github.com/Fenando-rv</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl">
+            <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terikirim.');" class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-2">Nama Lengkap</label>
+                  <input type="text" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-2">Email</label>
+                  <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-2">Subjek / Topik Kolaborasi</label>
+                <input type="text" required placeholder="Misal: Riset Sistem Informasi / Pelatihan Digital Forensics" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono font-bold uppercase text-slate-500 mb-2">Pesan Anda</label>
+                <textarea rows="4" required placeholder="Tuliskan pesan detail Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all">
+                Kirim Pesan Kolaborasi
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#060911]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">F</div>
+        <span class="text-sm font-semibold">Fenando, M.Kom. &copy; 2026</span>
+      </div>
+      <p class="text-xs text-slate-500 dark:text-slate-400 text-center sm:text-right">
+        UIN Raden Fatah Palembang | Certified BNSP Assessor & Senior Software Engineer
+      </p>
+      <div class="flex items-center gap-4 text-xs font-mono text-indigo-500">
+        <a href="https://github.com/Fenando-rv/" target="_blank" class="hover:underline flex items-center gap-1">
+          <i data-lucide="github" class="w-4 h-4"></i> GitHub Profile
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARCHITECTURE DETAIL MODAL DIALOG -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md overflow-y-auto">
+    <div id="modal-backdrop" class="fixed inset-0"></div>
+    <div class="modal-content relative z-10 w-full max-w-3xl glass-panel bg-slate-900 text-white rounded-3xl overflow-hidden shadow-2xl my-8">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+        <div>
+          <span id="modal-category" class="px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-400 font-mono text-xs font-semibold">Category</span>
+          <h3 id="modal-title" class="text-xl font-bold text-white mt-1">Project Title</h3>
+        </div>
+        <button id="modal-close-btn" type="button" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6 max-h-[75vh] overflow-y-auto">
+        <div class="rounded-2xl overflow-hidden max-h-72 border border-slate-800">
+          <img id="modal-image" src="" alt="Project Image" class="w-full h-full object-cover">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/50 space-y-2">
+            <h4 class="text-xs font-mono font-bold text-amber-400 uppercase flex items-center gap-1.5">
+              <i data-lucide="alert-circle" class="w-4 h-4"></i> Masalah & Latar Belakang
+            </h4>
+            <p id="modal-problem" class="text-xs text-slate-300 leading-relaxed"></p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/50 space-y-2">
+            <h4 class="text-xs font-mono font-bold text-emerald-400 uppercase flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i> Solusi & Pendekatan
+            </h4>
+            <p id="modal-solution" class="text-xs text-slate-300 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-indigo-400 flex items-center gap-2">
+            <i data-lucide="cpu" class="w-4 h-4"></i> Arsitektur & Spesifikasi Teknikal
+          </h4>
+          <ul id="modal-architecture" class="text-xs text-slate-300 space-y-2 font-mono"></ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-cyan-400 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> Fitur & Hasil Kunci
+          </h4>
+          <ul id="modal-features" class="text-xs text-slate-300 space-y-2"></ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono font-bold text-slate-400 uppercase mb-2">Tech Stack Used</h4>
+          <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
