@@ -260,6 +260,7 @@ const projectDetailsData = {
     title: "Kecocokan Jodoh (Algorithmic Logic App)",
     category: "Interactive Logic / Algorithmic Fun",
     image: "assets/images/project_match.jpg",
+    liveUrl: "https://fenando-rv.github.io/Kecocokan_Jodoh/",
     problem: "Kebutuhan akan media interaktif berbasis logika pemrograman yang dapat mensimulasikan pencocokan parameter personal secara menyenangkan namun terstruktur.",
     solution: "Membuat aplikasi algoritma interaktif berbasis web yang memproses nama, numerologi personal, dan preferensi untuk menghasilkan persentase kompatibilitas beserta visualisasi node.",
     architecture: [
@@ -349,6 +350,18 @@ function initProjectModals() {
         // Render Tech Tags
         const techContainer = document.getElementById('modal-tech');
         techContainer.innerHTML = data.tech.map(t => `<span class="px-2.5 py-1 text-xs font-mono rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">${t}</span>`).join('');
+
+        // Render Live Link if present
+        const liveContainer = document.getElementById('modal-live-container');
+        const liveBtn = document.getElementById('modal-live-btn');
+        if (liveContainer && liveBtn) {
+          if (data.liveUrl) {
+            liveBtn.href = data.liveUrl;
+            liveContainer.classList.remove('hidden');
+          } else {
+            liveContainer.classList.add('hidden');
+          }
+        }
 
         // Show modal
         modal.classList.add('active');
