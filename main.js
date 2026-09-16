@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectModals();
   initInteractivePlayground();
   initSkillBars();
+  initContactForm();
 });
 
 /* -------------------------------------------------------------
@@ -273,6 +274,47 @@ const projectDetailsData = {
       "Desain responsif & interaktif untuk semua perangkat"
     ],
     tech: ["JavaScript", "HTML5", "CSS3", "Algorithmic Logic"]
+  },
+  radenmat: {
+    title: "Web-Based POS System with Laravel for Toko Radenmat",
+    category: "Web Application / Commercial POS",
+    image: "assets/images/project_pos.jpg",
+    problem: "Pencatatan transaksi manual dan pengelolaan inventori ritel di Toko Radenmat yang rentan selisih stok, lambatnya layanan kasir, serta ketidakakuratan laporan keuangan harian.",
+    solution: "Merancang dan membangun Sistem Informasi Penjualan (Point of Sale / POS) berbasis web dengan framework Laravel yang mengotomatisasi kasir transaksi, manajemen stok barang, pencetakan struk, serta dashboard laporan penjualan harian/bulanan secara real-time.",
+    architecture: [
+      "Frontend: Responsive Blade Templating + Tailwind CSS & JavaScript",
+      "Backend: PHP Laravel MVC Architecture Engine",
+      "Database: MySQL Transactional Schema (Products, Sales, Stock Log)",
+      "Printer Integration: Thermal Receipt Printing & Barcode Scanner Integration"
+    ],
+    features: [
+      "Point of Sale (POS) interface kasir cepat dengan pencarian barang & barcode",
+      "Manajemen stok & notifikasi otomatis saat stok barang menipis",
+      "Cetak struk pembayaran kasir & transaksi via printer thermal",
+      "Dashboard analitik penjualan harian, bulanan, dan produk terlaris"
+    ],
+    tech: ["PHP", "Laravel", "MySQL", "Tailwind CSS", "POS Engine"]
+  },
+  mobile_pay: {
+    title: "Aplikasi Manajemen Pesanan & Pembayaran Digital (Mobile)",
+    category: "Mobile Application / Fintech & Commerce",
+    image: "assets/images/project_mobile.jpg",
+    problem: "Keterlambatan pemrosesan pesanan pelanggan dan kompleksitas verifikasi pembayaran manual pada operasional ritel & layanan pesanan.",
+    solution: "Mengembangkan aplikasi mobile cross-platform berbasis Flutter & REST API yang memungkinkan pelanggan melakukan pemesanan digital secara real-time, melacak alur proses pesanan, serta menyelesaikan pembayaran instant dengan integrasi Payment Gateway & E-Wallet.",
+    architecture: [
+      "Mobile Architecture: Flutter Cross-Platform App (Dart Engine)",
+      "State Management: BLoC / Provider Architecture Pattern",
+      "Backend Services: RESTful API Backend (PHP/Laravel & Node.js)",
+      "Payment Engine: Multi Payment Gateway Integration (QRIS, E-Wallet, Transfer)",
+      "Database & Push: MySQL Transactional DB & Firebase Cloud Messaging (FCM)"
+    ],
+    features: [
+      "Katalog produk mobile interaktif dengan sistem pencarian & keranjang",
+      "Real-time Order Tracking (Status Pesanan: Diproses, Dikirim, Selesai)",
+      "Integrasi transaksi pembayaran digital instant (QRIS, Virtual Account, E-Wallet)",
+      "Push Notification otomatis via Firebase untuk pembaharuan status pesanan"
+    ],
+    tech: ["Flutter", "Dart", "REST API", "Payment Gateway", "Firebase", "MySQL"]
   }
 };
 
@@ -433,4 +475,43 @@ function initSkillBars() {
   }, { threshold: 0.2 });
 
   observer.observe(skillSection);
+}
+
+/* -------------------------------------------------------------
+ * 9. Contact Form Controller (WhatsApp Direct Submission)
+ * ------------------------------------------------------------- */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  const subjectInput = document.getElementById('contact-subject');
+  const messageInput = document.getElementById('contact-message');
+
+  // Nomor WhatsApp Tujuan
+  const MY_WA_NUMBER = "6285367894141";
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      if (!name || !email || !subject || !message) {
+        alert('Mohon lengkapi semua kolom (Nama, Email, Subjek, Pesan) terlebih dahulu.');
+        return;
+      }
+
+      // Format WhatsApp Message Text
+      const text = `Halo Pak Fenando, perkenalkan saya: *${name}*\n` +
+                   `📧 Email: ${email}\n` +
+                   `📌 Subjek: ${subject}\n\n` +
+                   `💬 *Pesan Kolaborasi:*\n${message}`;
+
+      const waUrl = `https://wa.me/${MY_WA_NUMBER}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+  }
 }

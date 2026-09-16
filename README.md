@@ -2,7 +2,7 @@
 
 > **Tagline:** *"Bridging Academic Rigor & Modern Software Engineering."*
 
-Website portofolio interaktif dan modern untuk **Fenando, M.Kom.** — Dosen Sistem Informasi UIN Raden Fatah Palembang, Asesor Kompetensi BNSP, Oracle Academy Trainer, Google Certified Educator, dan Senior Software Engineer & Mentor Kepolisian.
+Website portofolio interaktif dan modern untuk **Fenando, M.Kom.** — Dosen Sistem Informasi UIN Raden Fatah Palembang, Asesor Kompetensi BNSP, Juri LKS SMK Prov. Sumsel (Web Technologies & Desain Grafis), Oracle Academy Trainer, Google Certified Educator, Senior Software Engineer, serta Narasumber, Mentor & Juri POLDA & POLRESTABES Sumsel.
 
 ---
 
@@ -70,10 +70,12 @@ Portofolio/
 
 1. **Sticky Header Navbar & Glassmorphism Design**: Header melayang dengan efek blur transparan, navigasi halus (*smooth scroll*), dan *toggle theme* **Dark/Light Mode** yang tersimpan di `localStorage`.
 2. **Interactive Statistics Counter**: Angka statistik interaktif saat di-scroll (Tahun Mengajar, Proyek Selesai, Sertifikasi BNSP/Oracle/Google, Pelatihan Kepolisian).
-3. **Academic & Professional Credentials Grid**: 4 Kartu modern pilar rekam jejak (Dosen UIN, Asesor BNSP, Instruktur Oracle/Google, Mentor Kepolisian POLDA Sumsel).
+3. **Academic & Professional Credentials Grid**: 4 Kartu modern pilar rekam jejak (Dosen UIN, Asesor BNSP, Instruktur Oracle/Google, Narasumber, Mentor & Juri POLDA Sumsel).
 4. **Featured Projects & Research**:
-   - Filter Tab interaktif (`Semua`, `Sistem Informasi`, `DSS & Algoritma`, `SIG / GIS`, `E-Commerce`).
-   - Modal Pop-up Arsitektur Sistem untuk 5 proyek utama:
+   - Filter Tab interaktif (`Semua`, `Sistem Informasi`, `Mobile App`, `DSS & Algoritma`, `SIG / GIS`, `E-Commerce`).
+   - Modal Pop-up Arsitektur Sistem untuk 7 proyek utama:
+     - *Aplikasi Manajemen Pesanan & Pembayaran Digital Mobile (Flutter & REST API)*
+     - *Web-Based POS System with Laravel for Toko Radenmat*
      - *Sistem Informasi Diklat UPTD BLK PPKT Sumsel*
      - *SPK: Pemilihan Sosok Mulia (SMART & Borda)*
      - *E-Commerce Toko Denia Donuts*
