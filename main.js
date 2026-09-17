@@ -316,6 +316,50 @@ const projectDetailsData = {
       "Push Notification otomatis via Firebase untuk pembaharuan status pesanan"
     ],
     tech: ["Flutter", "Dart", "REST API", "Payment Gateway", "Firebase", "MySQL"]
+  },
+  logbook_qr: {
+    title: "Logbook Presensi & Sertifikasi Pelatihan Berbasis QR Code",
+    category: "Mobile Application / Diklat & Training System Extension",
+    image: "assets/images/project_qr_logbook.jpg",
+    problem: "Proses pencatatan kehadiran peserta seminar/workshop yang masih manual kerap memicu antrean panjang, resiko ketidakakuratan riwayat presensi, serta lambatnya pencetakan sertifikat pelatihan secara individual.",
+    solution: "Merancang aplikasi mobile presensi mandiri dan pelacakan status pelatihan berbasis pemindai QR Code. Aplikasi ini merupakan ekstensi alami dari Sistem Informasi Diklat yang memungkinkan peserta melakukan registrasi sesi presensi cepat, memantau riwayat & penyelesaian materi, serta mengunduh sertifikat digital dalam bentuk PDF.",
+    architecture: [
+      "Mobile Engine: Mobile Cross-Platform App berbasis Flutter & Dart Framework",
+      "Scanner Engine: Mobile Camera Native QR Code Scanner Module (Instant Recognition)",
+      "PDF Generator: Client-Side Digital Certificate PDF Rendering & Download Module",
+      "Backend Integration: RESTful API Endpoint untuk Sinkronisasi Data Presensi & Sesi Diklat",
+      "Value Add: Ekstensi alami Sistem Informasi Diklat & Manajemen Pelatihan yang sangat mudah diuji coba secara langsung"
+    ],
+    features: [
+      "Pemindai kamera QR Code presisi untuk registrasi kehadiran sesi pelatihan",
+      "Riwayat kehadiran peserta & pelacakan status penyelesaian materi diklat real-time",
+      "Modul unduh sertifikat pelatihan otomatis berbasis PDF Generator sederhana",
+      "Integrasi seamless sebagai ekstensi mobile Sistem Informasi Manajemen Diklat",
+      "Antarmuka pengguna (UI/UX) intuitif & ringan yang sangat mudah diuji secara langsung"
+    ],
+    tech: ["Flutter", "Dart", "QR Code Scanner", "PDF Generator", "REST API", "Mobile UX"]
+  },
+  geotagging: {
+    title: "Smart Field Note & Geotagging Aset",
+    category: "Mobile Application / GIS & Spatial Field Survey",
+    image: "assets/images/project_geotagging.jpg",
+    problem: "Survei inventarisasi aset fisik dan audit fasilitas di lapangan sering terkendala ketidakakuratan penentuan posisi titik koordinat, fragmentasi data foto bukti, dan lambatnya konversi catatan manual ke dalam platform GIS.",
+    solution: "Merancang aplikasi mobile pencatatan survei lapangan cepat yang memadukan sensor GPS presisi tinggi dan pemindai kamera perangkat. Memungkinkan surveyor mencatat kondisi aset, merekam titik koordinat otomatis, melampirkan foto geotagged, serta mengekspor data ke format GeoJSON/CSV atau integrasi layer peta OpenStreetMap.",
+    architecture: [
+      "Mobile GIS Engine: Flutter / Mobile Cross-Platform dengan Geolocation & Camera Plugin",
+      "Mapping Integration: Leaflet.js / OpenStreetMap Mobile Layer Rendering Engine",
+      "Spatial Data Engine: GeoJSON FeatureCollection Builder & CSV Exporter Engine",
+      "Camera & EXIF Tagging: Native Camera SDK dengan penguncian metadata Lat/Long ke foto bukti",
+      "Value Add: Keterkaitan kuat dengan Sistem Informasi Geografis (SIG) & audit aset fisik untuk instansi publik, survei logistik, dan inventarisasi fasilitas"
+    ],
+    features: [
+      "Formulir digital dinamis untuk pencatatan kondisi dan kategori aset lapangan",
+      "Penguncian koordinat latitude & longitude otomatis berbasis GPS presisi tinggi",
+      "Modul pengambilan foto bukti lapangan bertanda air metadata geotagging",
+      "Peta interaktif OpenStreetMap untuk visualisasi pin titik lokasi survei real-time",
+      "Ekspor data hasil survei instan ke format GeoJSON, CSV, atau integrasi layer GIS"
+    ],
+    tech: ["Mobile GIS", "GPS Geotagging", "OpenStreetMap", "GeoJSON", "CSV Export", "Flutter"]
   }
 };
 

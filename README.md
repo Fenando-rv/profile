@@ -57,7 +57,11 @@ Portofolio/
 └── assets/
     └── images/             # Visual Assets & Generated Project Screenshots
         ├── profile.jpg     # Foto profil Fenando
-        ├── project_blk.jpg # Screenshot UI UPTD BLK PPKT Sumsel ERP
+        ├── project_geotagging.jpg # UI Smart Field Note & Geotagging Aset Mobile GIS
+        ├── project_qr_logbook.jpg # UI Logbook Presensi & Sertifikasi QR Code Mobile
+        ├── project_mobile.jpg     # Screenshot UI Mobile Order & Payment App
+        ├── project_pos.jpg        # Web-Based POS System Toko Radenmat
+        ├── project_blk.jpg        # Screenshot UI UPTD BLK PPKT Sumsel ERP
         ├── project_smart_borda.jpg # Visualisasi SPK SMART & Borda Research
         ├── project_donuts.jpg      # E-Commerce Denia Donuts Showcase
         ├── project_qgis.jpg        # Pemetaan Spasial QGIS Tambang Batu Bara
@@ -73,7 +77,9 @@ Portofolio/
 3. **Academic & Professional Credentials Grid**: 4 Kartu modern pilar rekam jejak (Dosen UIN, Asesor BNSP, Instruktur Oracle/Google, Narasumber, Mentor & Juri POLDA Sumsel).
 4. **Featured Projects & Research**:
    - Filter Tab interaktif (`Semua`, `Sistem Informasi`, `Mobile App`, `DSS & Algoritma`, `SIG / GIS`, `E-Commerce`).
-   - Modal Pop-up Arsitektur Sistem untuk 7 proyek utama:
+   - Modal Pop-up Arsitektur Sistem untuk 9 proyek utama:
+     - *Smart Field Note & Geotagging Aset (Mobile GIS & OpenStreetMap)*
+     - *Logbook Presensi & Sertifikasi Pelatihan Berbasis QR Code (Flutter Mobile App)*
      - *Aplikasi Manajemen Pesanan & Pembayaran Digital Mobile (Flutter & REST API)*
      - *Web-Based POS System with Laravel for Toko Radenmat*
      - *Sistem Informasi Diklat UPTD BLK PPKT Sumsel*
