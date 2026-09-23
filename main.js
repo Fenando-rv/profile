@@ -1,3 +1,8 @@
+/*!
+ * Fenando Portfolio SPA
+ * Copyright (c) 2026 Fenando, M.Kom. All Rights Reserved.
+ * Author: Fenando-rv (https://github.com/Fenando-rv)
+ */
 /**
  * Main Interactive Application Script
  * Portfolio Fenando - Senior Software Engineer & Lecturer
